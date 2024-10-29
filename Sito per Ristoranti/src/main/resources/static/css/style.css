@@ -49,10 +49,20 @@
     font-style: italic;
 }
 
-.carousel-section {
-    width: 800px;
-    height: 800px;
+.imageshow-section div {
+    border: 1px solid red;
 }
-.carousel-section img {
-    background-size: cover;
+
+.imageshow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageshow-section img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
