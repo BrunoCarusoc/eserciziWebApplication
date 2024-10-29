@@ -1,5 +1,46 @@
+.highlight {
+    color: #f65039;
+    font-style: italic;
+    font-weight: 700;
+}
+
+
 /* Header & Navigation */
 
-.nav-link {
+.navbar .nav-link {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/pizzeria-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-section .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/*
+.title-display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+*/
+.title-display .title {
+    font-size: 5em;
     font-weight: bold;
 }
+.title-display .sub-title {
+    font-size: 2em;
+    font-style: italic;
+}
+
