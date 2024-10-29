@@ -49,9 +49,6 @@
     font-style: italic;
 }
 
-.imageshow-section div {
-    border: 1px solid red;
-}
 
 .imageshow-container {
     display: flex;
@@ -59,6 +56,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.imageshow-container .column-up {
+    margin-top: 30px;
+}
+.imageshow-section .column-down {
+    margin-top: 60px;
+}
+
 
 .imageshow-section img {
     width: 350px;
