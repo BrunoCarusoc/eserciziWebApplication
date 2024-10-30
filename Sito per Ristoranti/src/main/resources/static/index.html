@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>HomeTown Pizzeria</title>
 
     <!-- Bootstrap CSS -->
     <!-- [Caricamento di Bootstrap via CDN] -->
@@ -18,12 +18,23 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top justify-content-center bg-dark border-bottom" data-bs-theme="dark">
-            <ul class="navbar-nav p-2">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Prenota Ora</a></li>
-            </ul>
+        <nav class="navbar-container row g-0 d-flex align-items-center bg-dark text-white" data-bs-theme="dark">
+            <div class="col py-2">
+                <a class="navbar-brand px-4 d-flex align-items-center" href="index.html">
+                    <img src="./img/pizza-icon.png" alt="Logo-Image" width="30" height="30">
+                    <p class="logo-title ps-1">HomeTown Pizzeria</p>
+                </a>
+            </div>
+            <div class="col p-2">
+                <ul class="nav main-nav d-flex align-items-center justify-content-center">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-section">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                </ul>
+            </div>
+            <div class="col px-3 d-flex justify-content-end">
+                <a class="btn px-3 btn-danger btn-personal" href="#" role="button">Prenota Ora</a>
+            </div>
         </nav>
     </header>
     <main>
@@ -33,8 +44,9 @@
                 <p class="sub-title text-light">La Vostra Pizzeria di Fiducia</p>
             </div>
         </section>
-        <section class="about-section py-5 my-5 text-center">
-            <h2 class="about-title mb-4">Benvenuti a <span class="highlight">HomeTown</span></h2>
+
+        <section id="about-section" class="about-section py-5 my-5 text-center">
+            <h2 class="about-title mb-4 text-bold">Benvenuti a <span class="highlight">HomeTown</span></h2>
             <div class="d-flex justify-content-center">
                 <div class="col-md-8">
                     <p>Nel cuore della città, HomeTown nasce dalla passione per la pizza autentica e dal desiderio di creare un luogo
@@ -50,13 +62,14 @@
                 </div>
             </div>
         </section>
+
         <section class="imageshow-section container">
             <div class="row g-0 justify-content-center m-4">
                 <div class="column-down col-sm p-2 text-center d-flex flex-column align-items-center justify-content-start">
                     <img src="./img/pizzeria-img2.jpg" alt="IMG">
                     <p class="p-5">
                         Dalla scelta degli ingredienti freschi alla cura nella preparazione,
-                        HomeTown è sinonimo di qualità e passione per il buon cibo. Ogni morso è
+                        <span class="highlight">HomeTown</span> è sinonimo di qualità e passione per il buon cibo. Ogni morso è
                         un invito a riscoprire il piacere della pizza autentica.
                     </p>
                 </div>
@@ -64,14 +77,14 @@
                     <img src="./img/pizzeria-img1.jpg" alt="IMG">
                     <p class="p-5">
                         La pizza è più buona quando condivisa con amici e persone care.
-                        HomeTown è il luogo perfetto per trascorrere serate in compagnia, ridere
+                        <span class="highlight">HomeTown</span> è il luogo perfetto per trascorrere serate in compagnia, ridere
                         e creare ricordi preziosi intorno a una tavola imbandita.
                     </p>
                 </div>
                 <div class="column-down col-sm p-2 text-center d-flex flex-column align-items-center justify-content-start">
                     <img src="./img/pizzeria-img3.jpg" alt="IMG">
                     <p class="p-5">
-                        Da HomeTown, ogni pizza è fatta con amore, proprio come a casa.
+                        Da <span class="highlight">HomeTown</span>, ogni pizza è fatta con amore, proprio come a casa.
                         Qui, crediamo che la famiglia sia il cuore di ogni pasto
                         e che condividere una buona pizza renda ogni momento speciale.
                     </p>

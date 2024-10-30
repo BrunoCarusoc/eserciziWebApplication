@@ -1,3 +1,5 @@
+/* Global */
+
 * {
     margin: 0px;
     box-sizing: border-box;
@@ -9,13 +11,43 @@
     font-weight: 700;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
+.btn.btn-personal {
+    background-color: #d3422e;
+    border-radius: 30px;
+
+    font-weight: 600;
+
+}
+
 
 /* Header & Navigation */
 
-.navbar .nav-link {
-    font-weight: bold;
-    font-size: 1.25em;
+.logo-title {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
 }
+
+.nav.main-nav .nav-link {
+    font-weight: 400;
+    color: #bababa;
+}
+
+.nav.main-nav .nav-link:hover {
+    font-weight: 400;
+    color: #e8e8e8;
+}
+
+.nav.main-nav .nav-link.active, .nav.main-nav .nav-link.active:hover  {
+    font-weight: 700;
+    color: white;
+}
+
+/* Hero Section */
 
 .hero-section {
     height: 100vh;
@@ -49,6 +81,7 @@
     font-style: italic;
 }
 
+/* Image Show */
 
 .imageshow-container {
     display: flex;
@@ -63,7 +96,6 @@
 .imageshow-section .column-down {
     margin-top: 60px;
 }
-
 
 .imageshow-section img {
     width: 350px;
