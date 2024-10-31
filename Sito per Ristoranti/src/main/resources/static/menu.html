@@ -17,28 +17,166 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-  <nav class="navbar-container row g-0 d-flex align-items-center bg-dark text-white" data-bs-theme="dark">
-    <div class="col py-2">
-      <a class="navbar-brand px-4 d-flex align-items-center" href="index.html">
-        <img src="./img/pizza-icon.png" alt="Logo-Image" width="30" height="30">
-        <p class="logo-title ps-1">HomeTown Pizzeria</p>
-      </a>
-    </div>
-    <div class="col p-2">
-      <ul class="nav main-nav d-flex align-items-center justify-content-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html#about-section">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Menu</a></li>
-      </ul>
-    </div>
-    <div class="col px-3 d-flex justify-content-end">
-      <a class="btn px-3 btn-danger btn-personal" href="#" role="button">Prenota Ora</a>
-    </div>
-  </nav>
-</header>
-<main>
-</main>
+    <header>
+        <nav class="navbar-container row g-0 d-flex align-items-center bg-dark text-white" data-bs-theme="dark">
+            <div class="col py-2">
+                <a class="navbar-brand px-4 d-flex align-items-center" href="index.html">
+                    <img src="./img/pizza-icon.png" alt="Logo-Image" width="30" height="30">
+                    <p class="logo-title ps-1">HomeTown Pizzeria</p>
+                </a>
+            </div>
+            <div class="col p-2">
+                <ul class="nav main-nav d-flex align-items-center justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about-section">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Menu</a></li>
+                </ul>
+            </div>
+            <div class="col px-3 d-flex justify-content-end">
+                <a class="btn px-3 btn-danger btn-personal" href="#" role="button">Prenota Ora</a>
+            </div>
+        </nav>
+    </header>
+    <main class="bg-color-secondary color-default">
+        <section class="menu-show-section">
+            <div class="container text-center">
+                <h2 class="about-title mb-4 text-bold">Scoprite il Nostro <span class="highlight">Menu</span></h2>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <p>
+                            Da HomeTown, il nostro menu è pensato per celebrare i sapori genuini e l’autenticità della
+                            tradizione italiana. Ogni pizza è preparata con ingredienti freschi e selezionati, dalla
+                            mozzarella fior di latte al pomodoro San Marzano, per garantire un gusto indimenticabile.
+                        </p>
+                        <p>
+                            Scegliete tra le classiche, amate da tutti, o lasciatevi tentare dalle nostre creazioni speciali,
+                            uniche nel loro genere. E non dimenticate di accompagnare la vostra pizza con i nostri antipasti
+                            o di concludere il pasto con un dolce della casa. Buon appetito e benvenuti da HomeTown, dove il
+                            buon cibo e la convivialità sono di casa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-table-section">
+            <!-- Sezione: Pizze Classiche -->
+            <div class="table-container">
+                <div class="d-flex justify-content-start">
+                    <h5 class="table-heading text-bold bg-color-secondary">Pizze Classiche</h5>
+                </div>
+                <table class="table">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ingredienti</th>
+                    <th>Prezzo</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Margherita</td>
+                    <td>Pomodoro San Marzano, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva</td>
+                    <td>€6,00</td>
+                </tr>
+                <tr>
+                    <td>Marinara</td>
+                    <td>Pomodoro San Marzano, aglio, origano, olio extravergine d'oliva</td>
+                    <td>€5,50</td>
+                </tr>
+                <tr>
+                    <td>Napoli</td>
+                    <td>Pomodoro San Marzano, mozzarella fior di latte, acciughe, origano, olio extravergine d'oliva</td>
+                    <td>€7,00</td>
+                </tr>
+                <tr>
+                    <td>Quattro Stagioni</td>
+                    <td>Pomodoro San Marzano, mozzarella fior di latte, prosciutto cotto, carciofi, funghi, olive nere</td>
+                    <td>€8,50</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <!-- Sezione: Pizze Speciali -->
+            <div class="table-container">
+                <div class="d-flex justify-content-start">
+                    <h5 class="table-heading text-bold bg-color-secondary">Pizze Speciali</h5>
+                </div>
+                <table class="table">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ingredienti</th>
+                    <th>Prezzo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Diavola</td>
+                    <td>Pomodoro San Marzano, mozzarella fior di latte, salame piccante, peperoncino, olio al basilico</td>
+                    <td>€8,00</td>
+                </tr>
+                <tr>
+                    <td>Bufalina</td>
+                    <td>Pomodoro San Marzano, mozzarella di bufala campana, basilico fresco, olio extravergine d'oliva</td>
+                    <td>€8,50</td>
+                </tr>
+                <tr>
+                    <td>Tartufo e Porcini</td>
+                    <td>Crema di tartufo, mozzarella fior di latte, funghi porcini, scaglie di parmigiano</td>
+                    <td>€10,00</td>
+                </tr>
+                <tr>
+                    <td>Pistacchio e Mortadella</td>
+                    <td>Crema di pistacchio, mozzarella fior di latte, mortadella, granella di pistacchio</td>
+                    <td>€11,00</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+
+            <!-- Sezione: Altri Piatti -->
+            <div class="table-container">
+                <div class="d-flex justify-content-start">
+                    <h5 class="table-heading text-bold bg-color-secondary">Altri Piatti</h5>
+                </div>
+                <table class="table">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ingredienti</th>
+                    <th>Prezzo</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Bruschette Miste</td>
+                    <td>Pane croccante con pomodorini, aglio, basilico; oppure stracchino e salsiccia, o crema di olive</td>
+                    <td>€4,50</td>
+                </tr>
+                <tr>
+                    <td>Insalata Caprese</td>
+                    <td>Pomodori freschi, mozzarella di bufala campana, basilico, olio extravergine d'oliva</td>
+                    <td>€5,50</td>
+                </tr>
+                <tr>
+                    <td>Tiramisù della Casa</td>
+                    <td>Crema al mascarpone, savoiardi inzuppati al caffè, cacao in polvere</td>
+                    <td>€4,00</td>
+                </tr>
+                <tr>
+                    <td>Panna Cotta al Caramello</td>
+                    <td>Panna fresca, vaniglia, caramello fatto in casa</td>
+                    <td>€4,00</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+    </main>
 
 
 </body>
