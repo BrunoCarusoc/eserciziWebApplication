@@ -1,7 +1,8 @@
 /* Global */
 
 * {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -123,16 +124,22 @@
 }
 
 .menu-table-section .table-container {
-    margin: 80px 30px;
-    padding: 20px 20px 0;
+    margin: 100px 30px;
+    padding: 20px 20px 10px;
 
     border: 3px solid #f9dcc4;
     border-radius: 15px;
 }
 
 .menu-table-section .table-container .table {
-    color: white;
-    background-color: black;
+    --bs-table-color: #ffe6d7;
+    --bs-table-bg: #432818;
+    --bs-table-border-color: transparent;
+}
+
+.menu-table-section .table-container .table th {
+    --bs-table-color: rgba(255, 230, 215, 0.63);
+    font-style: italic;
 }
 
 .menu-table-section .table-container tbody tr td:first-child{
@@ -142,9 +149,13 @@
 }
 
 .menu-table-section .table-container .table-heading {
-    margin-top: -40px;
+    margin-top: -50px;
     margin-bottom: 30px;
-    padding: 0 20px 0;
+    padding: 10px 20px;
+
+    border-radius: 5px;
+    background-color: #ffe6d7;
+    color: #432818;
 
     text-transform: uppercase;
     font-size: 1.8em;
