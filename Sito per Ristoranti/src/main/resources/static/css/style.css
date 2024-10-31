@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+body { height: 100vh; }
 
 .text-bold { font-weight: bold; }
 .bg-color-primary { background-color: #f9dcc4; !important; }
@@ -90,7 +91,7 @@
 /* Image Show */
 .imageshow-section {
     margin-top: 90px;
-    padding: 0 100px;
+    padding: 0 100px 10px;
 }
 
 .imageshow-container {
@@ -114,13 +115,40 @@
     border-radius: 10px;
 }
 
+/* Order Section */
+
+.order-section .btn {
+    margin-top: -30px;
+
+    font-size: 1.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Review Section */
+.review-divider {
+    border-top: 2px solid rgba(249, 220, 196, 0.61);
+
+    width: 50%;
+    transform: translateX(50%);
+
+}
+
+.review-section .review-card {
+    width: 18rem;
+
+    background-color: #f9dcc4;
+    color: #432818;
+}
+
+
 /* Menu Show & Table */
 .menu-show-section {
     padding-top: 50px;
 }
 
 .menu-table-section {
-    margin: 50px 90px;
+    padding: 0 90px 50px;
 }
 
 .menu-table-section .table-container {
@@ -129,6 +157,9 @@
 
     border: 3px solid #f9dcc4;
     border-radius: 15px;
+}
+.menu-table-section .table-container:last-child {
+    margin-bottom: 0;
 }
 
 .menu-table-section .table-container .table {

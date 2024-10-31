@@ -18,7 +18,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar-container row g-0 d-flex align-items-center bg-dark text-white" data-bs-theme="dark">
+        <nav class="navbar-container row g-0 d-flex align-items-center bg-dark color-default" data-bs-theme="dark">
             <div class="col py-2">
                 <a class="navbar-brand px-4 d-flex align-items-center" href="index.html">
                     <img src="./img/pizza-icon.png" alt="Logo-Image" width="30" height="30">
@@ -33,10 +33,11 @@
                 </ul>
             </div>
             <div class="col px-3 d-flex justify-content-end">
-                <a class="btn px-3 btn-danger btn-personal" href="#" role="button">Prenota Ora</a>
+                <a class="btn px-3 btn-danger btn-personal color-default" href="#" role="button">Prenota Ora</a>
             </div>
         </nav>
     </header>
+
     <main class="bg-color-secondary color-default">
         <section class="hero-section">
             <div class="overlay title-display d-flex flex-column justify-content-center align-items-center align-self-center">
@@ -67,7 +68,7 @@
             <div class="row g-0 justify-content-center m-4">
                 <div class="column-down col-sm p-2 text-center d-flex flex-column align-items-center justify-content-start">
                     <img src="./img/pizzeria-img2.jpg" alt="IMG">
-                    <p class="p-5">
+                    <p class="px-5 py-4">
                         Dalla scelta degli ingredienti freschi alla cura nella preparazione,
                         <span class="highlight">HomeTown</span> è sinonimo di qualità e passione per il buon cibo. Ogni morso è
                         un invito a riscoprire il piacere della pizza autentica.
@@ -75,7 +76,7 @@
                 </div>
                 <div class="column-up col-sm p-2 text-center d-flex flex-column align-items-center justify-content-start">
                     <img src="./img/pizzeria-img1.jpg" alt="IMG">
-                    <p class="p-5">
+                    <p class="px-5 py-4">
                         La pizza è più buona quando condivisa con amici e persone care.
                         <span class="highlight">HomeTown</span> è il luogo perfetto per trascorrere serate in compagnia, ridere
                         e creare ricordi preziosi intorno a una tavola imbandita.
@@ -83,7 +84,7 @@
                 </div>
                 <div class="column-down col-sm p-2 text-center d-flex flex-column align-items-center justify-content-start">
                     <img src="./img/pizzeria-img3.jpg" alt="IMG">
-                    <p class="p-5">
+                    <p class="px-5 py-4">
                         Da <span class="highlight">HomeTown</span>, ogni pizza è fatta con amore, proprio come a casa.
                         Qui, crediamo che la famiglia sia il cuore di ogni pasto
                         e che condividere una buona pizza renda ogni momento speciale.
@@ -92,8 +93,61 @@
             </div>
         </section>
 
+        <section class="order-section text-center mb-5">
+            <a class="btn px-4 py-3 btn-danger btn-personal color-default" href="menu.html" role="button">Ordina Ora</a>
+            <h4 class="my-4">Scopri il nostro <span class="text-bold">Menu</span> e approfitta delle <span class="text-bold">Offerte</span></h4>
+        </section>
+
+        <div class="review-divider mt-3"></div>
+        <section class="review-section mx-5 py-5 d-flex justify-content-evenly">
+            <div class="card review-card">
+                <div class="card-body">
+                    <h5 class="card-title">Maria R.</h5>
+                    <h6 class="card-subtitle mb-2 text-muted mb-3">⭐⭐⭐⭐⭐</h6>
+                    <p class="card-text">"Finalmente una pizzeria che sa cosa significa vera tradizione italiana!
+                        La pizza è leggera, con ingredienti freschissimi e sapori autentici. Ambiente accogliente
+                        e perfetto per una serata in famiglia. Torneremo sicuramente!"
+                    </p>
+                </div>
+            </div>
+            <div class="card review-card">
+                <div class="card-body">
+                    <h5 class="card-title">Gianni L.</h5>
+                    <h6 class="card-subtitle mb-2 text-muted mb-3">⭐⭐⭐⭐⭐</h6>
+                    <p class="card-text">"La Diavola è fantastica, con il giusto tocco di piccante e una mozzarella che si scioglie in bocca!
+                        Personale gentile e disponibile, e un’atmosfera che ti fa sentire subito a casa.
+                        Un’ottima scelta per una cena in compagnia."
+                    </p>
+                </div>
+            </div>
+            <div class="card review-card">
+                <div class="card-body">
+                    <h5 class="card-title">Elena M.</h5>
+                    <h6 class="card-subtitle mb-2 text-muted mb-3">⭐⭐⭐⭐⭐</h6>
+                    <p class="card-text">"Che dire, HomeTown è diventato il mio posto preferito per la pizza.
+                        Ingredienti di qualità e sapori unici come nella Pistacchio e Mortadella, che è un capolavoro!
+                        Ambiente caldo e servizio impeccabile, consigliatissimo!"
+                    </p>
+                </div>
+            </div>
+            <div class="card review-card">
+                <div class="card-body">
+                    <h5 class="card-title">Marco D.</h5>
+                    <h6 class="card-subtitle mb-2 text-muted mb-3">⭐⭐⭐⭐⭐</h6>
+                    <p class="card-text">"Una vera scoperta! HomeTown è il posto giusto per chi cerca una pizza autentica,
+                        preparata con attenzione e passione. Gli ingredienti sono freschi e le combinazioni di sapori ben pensate.
+                        Da provare assolutamente, e il tiramisù è la ciliegina sulla torta!"
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="review-divider pb-5"></div>
+
+
     </main>
 
-
+    <footer class="p-3 d-flex justify-content-center bg-dark color-default">
+        Web Application, A.A. 2024/2025 - Caruso Bruno
+    </footer>
 </body>
 </html>

@@ -18,7 +18,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar-container row g-0 d-flex align-items-center bg-dark text-white" data-bs-theme="dark">
+        <nav class="navbar-container row g-0 d-flex align-items-center bg-dark color-default" data-bs-theme="dark">
             <div class="col py-2">
                 <a class="navbar-brand px-4 d-flex align-items-center" href="index.html">
                     <img src="./img/pizza-icon.png" alt="Logo-Image" width="30" height="30">
@@ -27,16 +27,17 @@
             </div>
             <div class="col p-2">
                 <ul class="nav main-nav d-flex align-items-center justify-content-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about-section">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-section">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
                 </ul>
             </div>
             <div class="col px-3 d-flex justify-content-end">
-                <a class="btn px-3 btn-danger btn-personal" href="#" role="button">Prenota Ora</a>
+                <a class="btn px-3 btn-danger btn-personal color-default" href="#" role="button">Prenota Ora</a>
             </div>
         </nav>
     </header>
+
     <main class="bg-color-secondary color-default">
         <section class="menu-show-section">
             <div class="container text-center">
@@ -100,7 +101,7 @@
             </div>
 
             <!-- Sezione: Pizze Speciali -->
-            <div class="table-container v2">
+            <div class="table-container">
                 <div class="d-flex justify-content-start">
                     <h5 class="table-heading text-bold">Pizze Speciali</h5>
                 </div>
@@ -178,6 +179,8 @@
         </section>
     </main>
 
-
+    <footer class="p-3 d-flex justify-content-center bg-dark color-default">
+        Web Application, A.A. 2024/2025 - Caruso Bruno
+    </footer>
 </body>
 </html>
