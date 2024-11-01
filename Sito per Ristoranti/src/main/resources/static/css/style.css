@@ -263,15 +263,24 @@ body { height: 100vh; }
 
 
 .form-container .row .form-floating label { padding-left: 1.2em; }
-.form-container .form-floating input:focus ~ label,
-.form-container .form-floating input:not(:placeholder-shown) ~ label {
-    color: #432818;
+.form-container .row .form-floating .form-select ~ label { padding-left: 0.4em;}
+
+.form-container .form-floating .form-control:focus ~ label,
+.form-container .form-floating .form-control:not(:placeholder-shown) ~ label,
+.form-container .form-floating .form-select ~ label
+{
+    color: rgba(67, 40, 24, 1);
 }
-.form-container .form-floating input:focus ~ label::after,
-.form-container .form-floating input:not(:placeholder-shown) ~ label::after
+.form-container .form-floating .form-control:focus ~ label::after,
+.form-container .form-floating .form-control:not(:placeholder-shown) ~ label::after,
+.form-container .form-floating .form-select ~ label::after
 {
     background-color: transparent;
     color: #432818;
+}
+
+.form-select {
+    height: auto;
 }
 
 .notes-area {
@@ -279,9 +288,10 @@ body { height: 100vh; }
 }
 
 .contact-map {
-    width: 500px;
-    height: 375px;
+    width: 580px;
+    height: 400px;
 
     border: 0;
+    border-radius: 15px;
 }
 

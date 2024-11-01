@@ -57,22 +57,30 @@
         <div class="d-flex justify-content-start">
           <h5 class="boxed-container-heading text-bold bg-color-secondary boxed-title-top">Contattaci</h5>
         </div>
-        <form class="row g-3 px-2 pb-3">
-          <div class="col-md-6">
-            <input type="text" class="form-control" id="inputFirstName" placeholder="Nome">
+        <form id="contactForm" class="row g-3 px-2 pb-3 color-secondary">
+          <div class="form-floating col-md-6">
+            <input id="inputFirstName" type="text" class="form-control"
+                   placeholder="Nome" pattern="^[A-Za-z\s]+$" required>
+            <label for="inputFirstName">Nome</label>
           </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" id="inputLastName" placeholder="Cognome">
+          <div class="form-floating col-md-6">
+            <input id="inputLastName" type="text" class="form-control"
+                   placeholder="Cognome" pattern="^[A-Za-z\s]+$" required>
+            <label for="inputLastName">Cognome</label>
           </div>
-          <div class="col-12">
-            <input type="text" class="form-control" id="inputAddress" placeholder="Indirizzo">
+          <div class="form-floating col-md-12">
+            <input id="inputAddress" type="text" class="form-control"
+                   placeholder="Indirizzo" pattern="^[A-Za-z\s,0-9]+$" required>
+            <label for="inputAddress">Indirizzo</label>
           </div>
-          <div class="col-md-6">
-            <input type="text" class="form-control" id="inputCity" placeholder="Citta'">
+          <div class="form-floating col-md-6">
+            <input id="inputCity" type="text" class="form-control"
+                   placeholder="Città" pattern="^[A-Za-z\s\']+$" required>
+            <label for="inputCity">Città</label>
           </div>
-          <div class="col-md-4">
-            <select id="inputStateRegion" class="form-select">
-              <option disabled selected>Regione</option>
+          <div class="form-floating col-md-4">
+            <select class="form-select" id="inputStateRegion" required>
+              <option disabled selected>Regione di Provenienza</option>
               <option value="ABR">Abruzzo</option>
               <option value="BAS">Basilicata</option>
               <option value="CAL">Calabria</option>
@@ -94,14 +102,18 @@
               <option value="VDA">Valle d'Aosta</option>
               <option value="VEN">Veneto</option>
             </select>
+            <label for="inputStateRegion">Regione</label>
           </div>
-          <div class="col-md-2">
-            <input type="text" class="form-control" id="inputCap2" placeholder="CAP">
+
+          <div class="form-floating col-md-2">
+            <input id="inputCap" type="text" class="form-control"
+                   placeholder="CAP" pattern="^\d{5}$" required>
+            <label for="inputCity">CAP</label>
           </div>
-          <div class="col-12">
-            <textarea class="form-control notes-area" id="inputNotesArea"
-                      placeholder="Lasciaci un messaggio..." >
-            </textarea>
+
+          <div class="form-floating col-md-12">
+            <textarea id="floatingTextarea" class="form-control" placeholder="Lasciaci un messaggio..."></textarea>
+            <label for="floatingTextarea">Lasciaci un messaggio...</label>
           </div>
           <div class="col-12 d-flex justify-content-end">
             <button type="submit" class="btn btn-danger btn-personal px-4 py-2 color-default">Invia</button>
