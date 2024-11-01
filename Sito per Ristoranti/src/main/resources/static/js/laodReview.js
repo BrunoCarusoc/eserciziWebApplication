@@ -1,4 +1,4 @@
-console.log("Caricato con Successo");
+// console.log("Caricato con Successo");
 
 const reviews = [
     {
@@ -50,14 +50,15 @@ const reviews = [
 
 function displayReviews() {
     const reviewsContainer = document.getElementById("reviewSectionDisplay");
-    console.log("1. Preso il container");
+    // console.log("1. Preso il container");
 
     reviews.forEach(review => {
-        console.log("Inserisco la Review di " + review.author + " ------ ")
+        // console.log("Inserimento della Review di " + review.author + " ------ ")
 
         const reviewCard = document.createElement("div");
         reviewCard.classList.add("card", "review-card");
 
+        // console.log("Creo HTML di supporto")
         reviewCard.innerHTML = `
                 <div class="card-body">
                     <h5 class="card-title">${review.author}</h5>
@@ -66,7 +67,7 @@ function displayReviews() {
                 </div>
             `;
 
-        console.log(" --- Aggiungo la Recensione di " + review.author);
+        // console.log(" --- Aggiungo la Recensione di " + review.author);
         reviewsContainer.appendChild(reviewCard);
 
     })

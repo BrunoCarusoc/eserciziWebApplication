@@ -119,26 +119,27 @@ body { height: 100vh; }
 }
 
 /* Image Show */
-.imageshow-section {
+.image-show-section {
     margin-top: 90px;
     padding: 0 100px 10px;
 }
 
-.imageshow-container {
+.image-show-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.imageshow-section .column-up {
+.image-show-section .column-up {
     margin-top: -50px;
 }
-.imageshow-section .column-down {
+
+.image-show-section .column-down {
     margin-top: 30px;
 }
 
-.imageshow-section img {
+.image-show-section img {
     width: 350px;
     height: 300px;
     object-fit: cover;
@@ -229,18 +230,48 @@ body { height: 100vh; }
     font-size: 1em;
 }
 
+.menu-table-section .table-container .customer-recommended td {
+    background-color: rgba(249, 220, 196, 0.25);
+}
+
 
 /* Form Section */
 .form-container input, .form-container form select, .form-container form textarea,
 .form-container input:focus, .form-container form select:focus, .form-container form textarea:focus{
     background-color: #f9dcc4;
 }
+.form-container label::before {
+    content: "";
 
-.form-container .row .form-floating label {
-    padding-left: 1.2em;
+    display: inline-block;
+    position: relative;
+    left: -5px;
+    min-width: 10px;
+    min-height: 10px;
+
+    margin-left: 5px;
+
+
+    border-radius: 50%;
+    background-color: transparent;
+    color: transparent;
 }
-.form-container .form-floating:has(input:focus) label::after {
-    display: none;
+
+.form-container input:valid ~ label::before { background-color: green; }
+.form-container input:invalid ~ label::before { background-color: red; }
+.form-container input:placeholder-shown ~ label::before { background-color: transparent; }
+
+
+.form-container .row .form-floating label { padding-left: 1.2em; }
+.form-container .form-floating input:focus ~ label,
+.form-container .form-floating input:not(:placeholder-shown) ~ label {
+    color: #432818;
+}
+.form-container .form-floating input:focus ~ label::after,
+.form-container .form-floating input:not(:placeholder-shown) ~ label::after
+{
+    background-color: transparent;
+    color: #432818;
 }
 
 .notes-area {

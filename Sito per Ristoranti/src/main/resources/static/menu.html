@@ -67,7 +67,7 @@
                 <div class="d-flex justify-content-start">
                     <h5 class="boxed-container-heading text-bold bg-color-secondary">Pizze Classiche</h5>
                 </div>
-                <table class="table">
+                <table id="classicPizzaTable" class="table">
                 <thead>
                 <tr>
                     <th>Nome</th>
@@ -106,7 +106,7 @@
                 <div class="d-flex justify-content-start">
                     <h5 class="boxed-container-heading text-bold">Pizze Speciali</h5>
                 </div>
-                <table class="table">
+                <table id="specialPizzaTable" class="table">
                 <thead>
                 <tr>
                     <th>Nome</th>
@@ -144,7 +144,7 @@
                 <div class="d-flex justify-content-start">
                     <h5 class="boxed-container-heading text-bold bg-color-secondary">Altri Piatti</h5>
                 </div>
-                <table class="table">
+                <table id="otherDishesTable" class="table">
                 <thead>
                 <tr>
                     <th>Nome</th>
@@ -181,7 +181,7 @@
 
         <div class="solid-divider my-4 pb-3"></div>
         <section class="insert-product-section py-3">
-            <div class="container  text-center">
+            <div class="container text-center">
                 <h2 class="mb-4 text-bold">Consigliaci una nuova <span class="highlight">Pizza</span></h2>
                 <div class="d-flex justify-content-center">
                     <div class="col-md-8">
@@ -193,19 +193,22 @@
                 </div>
             </div>
             <div class="form-container mx-5 px-5 py-3">
-                <form class="mx-5 px-5 color-secondary">
+                <form id="recommendPizzaForm" class="mx-5 px-5 color-secondary">
                     <div class="row gx-3 mb-3">
                         <div class="form-floating col-sm-8">
-                            <input type="text" class="form-control" id="inputPizzaName" placeholder="Pizza Personalizzata">
+                            <input id="inputPizzaName" type="text" class="form-control"
+                                   placeholder="Pizza Personalizzata" pattern="^[A-Za-z\s]+$" required>
                             <label for="inputPizzaName">Nome della Pizza</label>
                         </div>
                         <div class="form-floating col-sm-4">
-                            <input type="password" class="form-control" id="inputPizzaPrice" placeholder="0.00">
+                            <input id="inputPizzaPrice" type="text" class="form-control"
+                                   placeholder="0.00" pattern="^\d{1,}(,\d{1,2}){0,1}$" required>
                             <label for="inputPizzaPrice">Prezzo Consigliato</label>
                         </div>
                     </div>
                     <div class="form-floating col-sm-12">
-                        <input type="text" class="form-control" id="inputPizzaIngredients" placeholder="Margherita">
+                        <input id="inputPizzaIngredients" type="text" class="form-control"
+                               placeholder="Margherita" pattern="^[A-Za-z\s,]+$" required>
                         <label for="inputPizzaIngredients">Consigliaci cosa mettere sulla Pizza</label>
                     </div>
                     <div class="py-4 d-flex justify-content-center">
