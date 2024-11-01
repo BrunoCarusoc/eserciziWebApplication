@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body { height: 100vh; }
 
 .text-bold { font-weight: bold; }
@@ -27,7 +28,6 @@ body { height: 100vh; }
     border-radius: 30px;
 
     font-weight: 600;
-
 }
 
 .boxed-container {
@@ -156,13 +156,43 @@ body { height: 100vh; }
 }
 
 /* Review Section */
-.review-section .review-card {
-    width: 18rem;
+.review-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
 
+.review-section::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.review-section::-webkit-scrollbar-track {
+    background-color: #432818;
+}
+.review-section::-webkit-scrollbar-thumb {
+    background: #ffe6d7;
+    border-radius: 10px;
+}
+.review-section::-webkit-scrollbar-thumb:hover {
+    background: #f9dcc4;
+}
+
+.review-section .review-card {
+    display: inline-block;
+    position: relative;
+
+    margin: 0 20px;
+    min-width: 250px;
+    height: auto;
+
+    text-wrap: pretty;
     background-color: #f9dcc4;
     color: #432818;
 }
-
+.review-section .review-card p {
+    font-style: italic;
+}
 
 /* Menu Show & Table */
 .menu-show-section {
@@ -200,10 +230,17 @@ body { height: 100vh; }
 }
 
 
-/* Contact Section */
+/* Form Section */
 .form-container input, .form-container form select, .form-container form textarea,
 .form-container input:focus, .form-container form select:focus, .form-container form textarea:focus{
     background-color: #f9dcc4;
+}
+
+.form-container .row .form-floating label {
+    padding-left: 1.2em;
+}
+.form-container .form-floating:has(input:focus) label::after {
+    display: none;
 }
 
 .notes-area {
