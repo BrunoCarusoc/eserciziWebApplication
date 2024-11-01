@@ -41,7 +41,7 @@
     <main class="bg-color-secondary color-default">
         <section class="menu-show-section">
             <div class="container text-center">
-                <h2 class="about-title mb-4 text-bold">Scoprite il Nostro <span class="highlight">Menu</span></h2>
+                <h2 class="mb-4 text-bold">Scoprite il Nostro <span class="highlight">Menu</span></h2>
                 <div class="d-flex justify-content-center">
                     <div class="col-md-8">
                         <p>
@@ -177,6 +177,44 @@
             </table>
             </div>
         </section>
+
+        <div class="solid-divider my-4 pb-3"></div>
+        <section class="insert-product-section py-3">
+            <div class="container  text-center">
+                <h2 class="mb-4 text-bold">Consigliaci una nuova <span class="highlight">Pizza</span></h2>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <p> Hai la possibilita' di consigliarci una Pizza Personalizzata fatta apposta per te! <br>
+                            Noi valuteremo cio' che hai consigliato e la tua pizza potrebbe entrare a far parte
+                            del nostro <span class="highlight">Menu</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-container mx-5 px-5 py-3">
+                <form class="mx-5 px-5 color-secondary">
+                    <div class="row gx-2 mb-3">
+                        <div class="form-floating col-sm-8">
+                            <input type="text" class="form-control" id="inputPizzaName" placeholder="Pizza Personalizzata">
+                            <label for="inputPizzaName">Nome della Pizza</label>
+                        </div>
+                        <div class="form-floating col-sm-4">
+                            <input type="password" class="form-control" id="inputPizzaPrice" placeholder="0.00">
+                            <label for="inputPizzaPrice">Prezzo Consigliato</label>
+                        </div>
+                    </div>
+                    <div class="form-floating col-sm-12">
+                        <input type="password" class="form-control" id="inputPizzaIngredients" placeholder="Margherita">
+                        <label for="inputPizzaIngredients">Consigliaci cosa mettere sulla Pizza</label>
+                    </div>
+                    <div class="py-4 d-flex justify-content-center">
+                        <button type="submit" class="px-4 py-2 btn btn-danger btn-personal">Consiglia Questa Pizza</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
     </main>
 
     <footer class="p-3 d-flex justify-content-center bg-dark text-light">

@@ -54,6 +54,13 @@ body { height: 100vh; }
     margin-top: -30px;
 }
 
+.solid-divider {
+    border-top: 2px solid rgba(249, 220, 196, 0.61);
+
+    width: 50%;
+    transform: translateX(50%);
+}
+
 /* Header & Navigation */
 
 .logo-title {
@@ -149,14 +156,6 @@ body { height: 100vh; }
 }
 
 /* Review Section */
-.review-divider {
-    border-top: 2px solid rgba(249, 220, 196, 0.61);
-
-    width: 50%;
-    transform: translateX(50%);
-
-}
-
 .review-section .review-card {
     width: 18rem;
 
@@ -202,8 +201,8 @@ body { height: 100vh; }
 
 
 /* Contact Section */
-.contact-form-container input, .contact-form-container form select, .contact-form-container form textarea,
-.contact-form-container input:focus, .contact-form-container form select:focus, .contact-form-container form textarea:focus{
+.form-container input, .form-container form select, .form-container form textarea,
+.form-container input:focus, .form-container form select:focus, .form-container form textarea:focus{
     background-color: #f9dcc4;
 }
 
@@ -214,7 +213,7 @@ body { height: 100vh; }
 .contact-map {
     width: 500px;
     height: 375px;
-    border: 0;
 
+    border: 0;
 }
 
