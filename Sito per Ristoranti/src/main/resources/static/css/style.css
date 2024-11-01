@@ -30,6 +30,29 @@ body { height: 100vh; }
 
 }
 
+.boxed-container {
+    border: 3px solid #f9dcc4;
+    border-radius: 15px;
+}
+
+.boxed-container .boxed-container-heading {
+    margin-top: -50px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+
+    border-radius: 5px;
+    background-color: #ffe6d7;
+    color: #432818;
+
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-style: oblique;
+    letter-spacing: .1em;
+}
+
+.boxed-container .boxed-container-heading.boxed-title-top {
+    margin-top: -30px;
+}
 
 /* Header & Navigation */
 
@@ -155,8 +178,6 @@ body { height: 100vh; }
     margin: 100px 30px;
     padding: 20px 20px 10px;
 
-    border: 3px solid #f9dcc4;
-    border-radius: 15px;
 }
 .menu-table-section .table-container:last-child {
     margin-bottom: 0;
@@ -179,17 +200,21 @@ body { height: 100vh; }
     font-size: 1em;
 }
 
-.menu-table-section .table-container .table-heading {
-    margin-top: -50px;
-    margin-bottom: 30px;
-    padding: 10px 20px;
 
-    border-radius: 5px;
-    background-color: #ffe6d7;
-    color: #432818;
-
-    text-transform: uppercase;
-    font-size: 1.8em;
-    font-style: oblique;
-    letter-spacing: .1em;
+/* Contact Section */
+.contact-form-container input, .contact-form-container form select, .contact-form-container form textarea,
+.contact-form-container input:focus, .contact-form-container form select:focus, .contact-form-container form textarea:focus{
+    background-color: #f9dcc4;
 }
+
+.notes-area {
+    height: 100px;
+}
+
+.contact-map {
+    width: 500px;
+    height: 375px;
+    border: 0;
+
+}
+

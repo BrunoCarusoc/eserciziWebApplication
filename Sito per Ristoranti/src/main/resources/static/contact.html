@@ -38,11 +38,86 @@
     </nav>
   </header>
 
-  <main>
+  <main class="bg-color-secondary color-default">
+    <section class="contact-intro-section py-2 mb-5">
+      <div class="container text-center">
+        <h1 class="about-title my-4 text-bold"><span class="highlight">Contattaci</span> subito!</h1>
+        <div class="d-flex justify-content-center">
+          <div class="col-md-8">
+            <p>
+              Scrivici per avere delle informazioni aggiunte rigaurdo al servizio o vieni a trovarci, ti aspettiamo!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-info-section mx-5 px-5 py-3 row g-0">
+      <div class="contact-form-container boxed-container col mx-3 px-3">
+        <div class="d-flex justify-content-start">
+          <h5 class="boxed-container-heading text-bold bg-color-secondary boxed-title-top">Contattaci</h5>
+        </div>
+        <form class="row g-3 px-2 pb-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="Nome">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="inputLastName" placeholder="Cognome">
+          </div>
+          <div class="col-12">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Indirizzo">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="inputCity" placeholder="Citta'">
+          </div>
+          <div class="col-md-4">
+            <select id="inputStateRegion" class="form-select">
+              <option disabled selected>Regione</option>
+              <option value="ABR">Abruzzo</option>
+              <option value="BAS">Basilicata</option>
+              <option value="CAL">Calabria</option>
+              <option value="CAM">Campania</option>
+              <option value="EMR">Emilia-Romagna</option>
+              <option value="FVG">Friuli Venezia Giulia</option>
+              <option value="LAZ">Lazio</option>
+              <option value="LIG">Liguria</option>
+              <option value="LOM">Lombardia</option>
+              <option value="MAR">Marche</option>
+              <option value="MOL">Molise</option>
+              <option value="PIE">Piemonte</option>
+              <option value="PUG">Puglia</option>
+              <option value="SAR">Sardegna</option>
+              <option value="SIC">Sicilia</option>
+              <option value="TOS">Toscana</option>
+              <option value="TAA">Trentino-Alto Adige</option>
+              <option value="UMB">Umbria</option>
+              <option value="VDA">Valle d'Aosta</option>
+              <option value="VEN">Veneto</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control" id="inputCap2" placeholder="CAP">
+          </div>
+          <div class="col-12">
+            <textarea class="form-control notes-area" id="inputNotesArea"
+                      placeholder="Lasciaci un messaggio..." >
+            </textarea>
+          </div>
+          <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-danger btn-personal px-4 py-2 color-default">Conferma</button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-map-container col mx-3 px-3 d-flex justify-content-center align-items-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3130.8652748627833!2d16.028792802158573!3d38.30578910506054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13151b96fd634049%3A0x4da1a2b6724d9567!2sPizzeria%20%22Il%20Capriccio%22!5e0!3m2!1sit!2sit!4v1730448803669!5m2!1sit!2sit"
+                class="contact-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
 
   </main>
 
-  <footer class="p-3 d-flex justify-content-center bg-dark color-default">
+  <footer class="p-3 d-flex justify-content-center bg-dark text-light">
         Web Application, A.A. 2024/2025 - Caruso Bruno
     </footer>
 </body>
