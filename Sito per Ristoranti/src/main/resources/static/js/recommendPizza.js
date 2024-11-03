@@ -1,4 +1,4 @@
-console.log("Caricato con Successo");
+// console.log("Caricato con Successo");
 
 document.getElementById("recommendPizzaForm").addEventListener("submit", function (event) {
     event.preventDefault();

@@ -14,8 +14,12 @@
           crossorigin="anonymous">
   </script>
 
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=do_not_disturb_on" />
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="img/pizza-icon.png">
+  <script src="js/validateContactForm.js" defer></script>
 </head>
 <body>
   <header>
@@ -76,7 +80,7 @@
           </div>
           <div class="form-floating col-md-6">
             <input id="inputCity" type="text" class="form-control"
-                   placeholder="Città" pattern="^[A-Za-z\s\']+$" required>
+                   placeholder="Città" pattern="^[A-Za-z\s']+$" required>
             <label for="inputCity">Città</label>
           </div>
           <div class="form-floating col-md-4">
@@ -113,8 +117,8 @@
           </div>
 
           <div class="form-floating col-md-12">
-            <textarea id="floatingTextarea" class="form-control" placeholder="Lasciaci un messaggio..."></textarea>
-            <label for="floatingTextarea">Lasciaci un messaggio...</label>
+            <textarea id="messageTextArea" class="form-control" placeholder="Lasciaci un messaggio..."></textarea>
+            <label for="messageTextArea">Lasciaci un messaggio...</label>
           </div>
           <div class="col-12 d-flex justify-content-end">
             <button type="submit" class="btn btn-danger btn-personal px-4 py-2 color-default">Invia</button>
