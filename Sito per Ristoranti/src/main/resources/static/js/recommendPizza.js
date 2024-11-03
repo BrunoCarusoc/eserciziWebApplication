@@ -3,6 +3,8 @@
 document.getElementById("recommendPizzaForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
+    if (!validateRecommendForm()) { return; }
+
     const pizzasTable = document.getElementById("specialPizzaTable");
     const pizzaName = document.getElementById("inputPizzaName").value;
     const pizzaPrice = document.getElementById("inputPizzaPrice").value;
@@ -14,6 +16,29 @@ document.getElementById("recommendPizzaForm").addEventListener("submit", functio
 
     addTo(pizzasTable, pizzaName, pizzaIngs, pizzaPrice);
 });
+
+function validateRecommendForm() {
+
+    let pizzaName = document.getElementById("inputPizzaName").value;
+    if (pizzaName.length < 3 ) {
+        alert("Inserire un Nome Valido. Si possono usare lettere maiuscole e minuscole, spazi, ma non numeri o caratteri speciali");
+        return false;
+    }
+
+    let price = document.getElementById("inputPizzaPrice").value;
+    if (!price.match(/^\d+(,\d{2}){0,1}$/) ) {
+        alert("Inserire il Prezzo in un Formato Valido: solo numeri e, in caso si voglia aggiungere anche i centesimi, due numeri dopo una virgola");
+        return false;
+    }
+
+    let ings = document.getElementById("inputPizzaIngredients").value;
+    if (ings.length < 3) {
+        alert("Suggerisci quali ingredienti metteresti sulla tua pizza!");
+        return false;
+    }
+
+    return true;
+}
 
 function addTo(pizzasTable, pizzaName, pizzaIngs, pizzaPrice) {
 

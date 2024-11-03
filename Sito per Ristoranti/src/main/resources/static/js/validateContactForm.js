@@ -1,9 +1,9 @@
-console.log("Caricatio con Successo");
+// console.log("Caricato con Successo");
 
 function validateContactForm(event) {
     event.preventDefault();
 
-    let firstName = document.getElementById("inputFirstName").value;
+    let Name = document.getElementById("inputFirstName").value;
     if (firstName.length < 3 ) {
         alert("Inserire un Nome Valido. Si possono usare lettere maiuscole e minuscole, spazi, ma non numeri o caratteri speciali")
         return;

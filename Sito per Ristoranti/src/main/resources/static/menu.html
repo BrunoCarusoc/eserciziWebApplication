@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/pizza-icon.png">
     <script src="js/recommendPizza.js" defer></script>
+    <script src="js/validateRecommendForm.js" defer></script>
 </head>
 <body>
     <header>
@@ -206,7 +207,7 @@
                         </div>
                         <div class="form-floating col-sm-4">
                             <input id="inputPizzaPrice" type="text" class="form-control"
-                                   placeholder="0.00" pattern="^\d{1,}(,\d{1,2}){0,1}$" required>
+                                   placeholder="0.00" pattern="^\d{1,}(,\d{0,2}){0,1}$" required>
                             <label for="inputPizzaPrice">Prezzo Consigliato</label>
                         </div>
                     </div>
