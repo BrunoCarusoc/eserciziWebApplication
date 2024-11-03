@@ -61,6 +61,26 @@ body { height: 100vh; }
     transform: translateX(50%);
 }
 
+/* Icons Settings */
+.material-symbols-outlined {
+    font-variation-settings:
+             'FILL' 0,
+             'wght' 400,
+             'GRAD' 0,
+             'opsz' 24
+}
+
+.icon-personal {
+    margin-bottom: -.25em;
+    padding: .25em;
+
+    font-size: 1em;
+}
+
+
+
+
+
 /* Header & Navigation */
 
 .logo-title {
@@ -234,6 +254,10 @@ body { height: 100vh; }
     background-color: rgba(249, 220, 196, 0.25);
 }
 
+.menu-table-section .table-container .customer-recommended td:first-child {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* Form Section */
 .form-container input, .form-container form select, .form-container form textarea,

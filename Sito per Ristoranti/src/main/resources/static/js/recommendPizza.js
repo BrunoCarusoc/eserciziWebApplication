@@ -24,7 +24,16 @@ function addTo(pizzasTable, pizzaName, pizzaIngs, pizzaPrice) {
     const pizzaIngsCell = newSpecialPizzaRow.insertCell(1);
     const pizzaPriceCell = newSpecialPizzaRow.insertCell(2);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("btn", "color-default", "delete-button", "material-symbols-outlined", "icon-personal");
+    deleteButton.textContent = "do_not_disturb_on";
+    deleteButton.addEventListener("click", function() {
+        const row = deleteButton.closest("tr");
+        row.parentNode.removeChild(row);
+    });
+
     pizzaNameCell.textContent = pizzaName;
+    pizzaNameCell.appendChild(deleteButton);
     pizzaIngsCell.textContent = pizzaIngs;
     pizzaPriceCell.textContent = "€" + pizzaPrice;
 
