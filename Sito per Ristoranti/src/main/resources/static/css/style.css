@@ -295,6 +295,7 @@ body { height: 100vh; }
 {
     color: rgba(67, 40, 24, 1);
 }
+
 .form-container .form-floating .form-control:focus ~ label::after,
 .form-container .form-floating .form-control:not(:placeholder-shown) ~ label::after,
 .form-container .form-floating .form-select ~ label::after
