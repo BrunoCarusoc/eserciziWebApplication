@@ -117,10 +117,41 @@ public class RistoranteDaoJDBC implements RistoranteDao {
     }
 
     @Override
-    public void delete(Ristorante ristorante) { }
+    public void delete(Ristorante ristorante) {
+
+        String query = "DELETE FROM ristorante WHERE nome = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, ristorante.getNome());
+            statement.executeUpdate();
+
+        } catch (Exception e) { e.printStackTrace(); }
+    }
 
     @Override
     public List<Ristorante> findAllByPiattoName(String piattoName) {
+
+        String query = "SELECT nome, descrizione, ubicazione FROM ristorante, ristorante_piatto " +
+                "WHERE ristorante_piatto.piatto_nome = ? " +
+                "and ristorante.nome = ristorante_piatto.ristorante_nome";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, piattoName);
+            ResultSet rs = statement.executeQuery(query);
+
+            List<Ristorante> ristoranti = new ArrayList<>();
+            while (rs.next()){
+                Ristorante rist = new RistoranteProxy();
+                rist.setNome(rs.getString("nome"));
+                rist.setDescrizione(rs.getString("descrizione"));
+                rist.setUbicazione(rs.getString("ubicazione"));
+                ristoranti.add(rist);
+            }
+
+            return ristoranti;
+
+        } catch (Exception e) { e.printStackTrace(); }
+
         return List.of();
     }
 }

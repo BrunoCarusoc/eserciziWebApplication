@@ -109,10 +109,40 @@ public class PiattoDaoJDBC implements PiattoDao {
     }
 
     @Override
-    public void delete(Piatto piatto) {}
+    public void delete(Piatto piatto) {
+
+        String query = "DELETE FROM piatto WHERE nome = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, piatto.getNome());
+            statement.executeUpdate();
+
+        } catch (Exception e) { e.printStackTrace(); }
+    }
 
     @Override
     public List<Piatto> findAllByRistoranteName(String ristoranteName) {
+
+        String query = "SELECT nome, ingredienti FROM piatto, ristorante_piatto " +
+                "WHERE ristorante_piatto.ristorante_nome = ? " +
+                    "and piatto.nome = ristorante_piatto.piatto_nome";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, ristoranteName);
+            ResultSet rs = statement.executeQuery(query);
+
+            List<Piatto> piatti = new ArrayList<>();
+            while (rs.next()){
+                Piatto p = new PiattoProxy();
+                p.setNome(rs.getString("nome"));
+                p.setIngredienti(rs.getString("ingredienti"));
+                piatti.add(p);
+            }
+
+            return piatti;
+
+        } catch (Exception e) { e.printStackTrace(); }
+
         return List.of();
     }
 }
