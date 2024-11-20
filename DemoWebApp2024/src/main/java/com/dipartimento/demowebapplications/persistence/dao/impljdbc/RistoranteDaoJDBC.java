@@ -13,7 +13,9 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class RistoranteDaoJDBC implements RistoranteDao {
 
@@ -21,26 +23,70 @@ public class RistoranteDaoJDBC implements RistoranteDao {
 
     public RistoranteDaoJDBC(Connection connection) { this.connection = connection; }
 
-    private void restRelationsPResentInTheJoinTable(Connection connection, String nomeRistorante) throws Exception {
+    private void addToRistorantePiattoTable(String ristoranteName, List<Piatto> piatti) {
 
-        String query="Delete FROM ristorante_piatto WHERE ristorante_nome= ? ";
+        String query = "INSERT INTO ristorante_piatto (ristorante_nome, piatto_nome) VALUES (?, ?)" +
+                ", (?, ?)".repeat(Math.max(0, piatti.size() - 1));
 
-        PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setString(1, nomeRistorante);
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
 
-        preparedStatement.execute();
+            for (int i = 0; i < piatti.size(); i++) {
+                statement.setString(2*i, ristoranteName);
+                statement.setString(2*i + 1, piatti.get(i).getNome());
+            }
+
+            statement.executeUpdate();
+
+        } catch (Exception e) { e.printStackTrace(); }
+    }
+
+    private void deleteFromRistorantePiattoTable(String ristoranteName) {
+        deleteFromRistorantePiattoTable(ristoranteName, null);
+    }
+    private void deleteFromRistorantePiattoTable(String ristoranteName, List<String> idsToDelete) {
+
+        // Costruzione della Query per un range di valori
+        String query = "DELETE From ristorante_piatto" +
+                "WHERE ristorante_nome = ?";
+
+        if (idsToDelete != null)
+        { query += " and piatto_nome in [?" + ", ?".repeat(Math.max(0, idsToDelete.size() - 1)) + "]"; }
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, ristoranteName);
+
+            if (idsToDelete != null) {
+                for (int i = 0; i < idsToDelete.size(); i++)
+                { statement.setString(i + 1, idsToDelete.get(i)); }
+            }
+
+            statement.executeUpdate();
+
+        } catch (Exception e) { e.printStackTrace(); }
 
     }
 
-    private void insertJoinRistorantePiatto(Connection connection, String nomeRistorante, String nomePiatto) throws SQLException {
+    private void updateRistorantePiattoTable(Ristorante ristorante) {
 
-        String query="INSERT INTO ristorante_piatto (ristorante_nome,piatto_nome) VALUES (? , ?)";
+        List<Piatto> piattiReali = ristorante.getPiatti();
+        Set<String> idsPiattiRegistrati = DBManager.getInstance().getPiattoDao().findAllIDsbyRistoranteName(ristorante.getNome());
 
-        PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setString(1, nomeRistorante);
-        preparedStatement.setString(2, nomePiatto);
+        for (Piatto piatto : piattiReali) {
+            if (idsPiattiRegistrati.contains(piatto.getNome())) {
+                idsPiattiRegistrati.remove(piatto.getNome());
+                piattiReali.remove(piatto);
+            }
+        }
 
-        preparedStatement.execute();
+        // In questo punto: piattiReali --> piattiDaRegistrare
+        //                  idsPiattiRegistrati --> idsPiattiDaEliminare
+
+        if (!idsPiattiRegistrati.isEmpty())
+        { deleteFromRistorantePiattoTable(ristorante.getNome(), idsPiattiRegistrati.stream().toList()); }
+
+        if (!piattiReali.isEmpty())
+        { addToRistorantePiattoTable(ristorante.getNome(), piattiReali); }
 
     }
 
@@ -94,24 +140,14 @@ public class RistoranteDaoJDBC implements RistoranteDao {
                 "ON CONFLICT (nome) DO UPDATE SET " +
                 "   descrizione = EXCLUDED.descrizione , "+
                 "   ubicazione = EXCLUDED.ubicazione ";
+
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, ristorante.getNome());
             statement.setString(2, ristorante.getDescrizione());
             statement.setString(3, ristorante.getUbicazione());
             statement.executeUpdate();
 
-            List<Piatto> piatti = ristorante.getPiatti();
-            if(piatti == null || piatti.isEmpty()) { return; }
-
-            // reset all relation present in the join table
-            restRelationsPResentInTheJoinTable(connection , ristorante.getNome());
-
-            PiattoDao pd = DBManager.getInstance().getPiattoDao();
-
-            for (Piatto tempP : piatti) {
-                pd.save(tempP);
-                insertJoinRistorantePiatto(connection , ristorante.getNome() , tempP.getNome());
-            }
+            updateRistorantePiattoTable(ristorante);
 
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -124,6 +160,8 @@ public class RistoranteDaoJDBC implements RistoranteDao {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, ristorante.getNome());
             statement.executeUpdate();
+
+            deleteFromRistorantePiattoTable(ristorante.getNome());
 
         } catch (Exception e) { e.printStackTrace(); }
     }
@@ -154,4 +192,27 @@ public class RistoranteDaoJDBC implements RistoranteDao {
 
         return List.of();
     }
+
+    @Override
+    public Set<String> findAllIDsByPiattoName(String piattoName) {
+
+        Set<String> setOfIDs = new HashSet<>();
+
+        String query = "SELECT ristorante_nome FROM ristorante_piatto " +
+                "WHERE ristorante_piatto.piatto_nome = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, piattoName);
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()) {
+                setOfIDs.add(rs.getString("nome"));
+            }
+
+        } catch (Exception e) { e.printStackTrace(); }
+
+
+        return setOfIDs;
+    }
+
 }
