@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6859f96-7a79-40f3-9417-5cb2e7f6d1dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="b6859f96-7a79-40f3-9417-5cb2e7f6d1dc" name="Changes" comment="Introducing Dao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/RistoranteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/RistoranteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/impljdbc/PiattoDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/impljdbc/PiattoDaoJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/impljdbc/PiattoProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/impljdbc/PiattoProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/impljdbc/RistoranteDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dipartimento/demowebapplications/persistence/dao/impljdbc/RistoranteDaoJDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +208,7 @@
       <workItem from="1731498712476" duration="769000" />
       <workItem from="1731580224564" duration="1152000" />
       <workItem from="1731583477249" duration="62000" />
-      <workItem from="1732132310963" duration="2864000" />
+      <workItem from="1732132310963" duration="7830000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

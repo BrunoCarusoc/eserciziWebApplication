@@ -4,7 +4,6 @@ import com.dipartimento.demowebapplications.model.Piatto;
 import com.dipartimento.demowebapplications.model.Ristorante;
 import com.dipartimento.demowebapplications.persistence.DBManager;
 import com.dipartimento.demowebapplications.persistence.dao.PiattoDao;
-import com.dipartimento.demowebapplications.persistence.dao.RistoranteDao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -74,8 +73,8 @@ public class PiattoDaoJDBC implements PiattoDao {
             }
         }
 
-        // In questo punto: ristorantiReali --> ristorantiDaRegistrare
-        //                  idsRistorantiRegistrati --> idsRistorantiDaEliminare
+        // In questo punto: ristorantiReali - ristorantiRegistrati --> ristorantiDaRegistrare
+        //                  idsRistorantiRegistrati - idsRistorantiReali --> idsRistorantiDaEliminare
 
         if (!idsRistorantiRegistrati.isEmpty())
         { deleteFromRistorantePiattoTable(piatto.getNome(), idsRistorantiRegistrati.stream().toList()); }
@@ -196,7 +195,7 @@ public class PiattoDaoJDBC implements PiattoDao {
             ResultSet rs = statement.executeQuery(query);
 
             while (rs.next()) {
-                setOfIDs.add(rs.getString("nome"));
+                setOfIDs.add(rs.getString("piatto_nome"));
             }
 
         } catch (Exception e) { e.printStackTrace(); }

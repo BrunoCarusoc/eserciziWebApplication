@@ -3,7 +3,6 @@ package com.dipartimento.demowebapplications.persistence.dao.impljdbc;
 import com.dipartimento.demowebapplications.model.Piatto;
 import com.dipartimento.demowebapplications.model.Ristorante;
 import com.dipartimento.demowebapplications.persistence.DBManager;
-import com.dipartimento.demowebapplications.persistence.dao.PiattoDao;
 import com.dipartimento.demowebapplications.persistence.dao.RistoranteDao;
 
 import java.sql.Connection;
@@ -79,8 +78,8 @@ public class RistoranteDaoJDBC implements RistoranteDao {
             }
         }
 
-        // In questo punto: piattiReali --> piattiDaRegistrare
-        //                  idsPiattiRegistrati --> idsPiattiDaEliminare
+        // In questo punto: piattiReali - piattiRegistrati --> piattiDaRegistrare
+        //                  idsPiattiRegistrati - idsPiattiReali --> idsPiattiDaEliminare
 
         if (!idsPiattiRegistrati.isEmpty())
         { deleteFromRistorantePiattoTable(ristorante.getNome(), idsPiattiRegistrati.stream().toList()); }
@@ -122,11 +121,11 @@ public class RistoranteDaoJDBC implements RistoranteDao {
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
-                RistoranteProxy rist = new RistoranteProxy();
+                Ristorante rist = new RistoranteProxy();
                 rist.setNome(nome);
                 rist.setDescrizione(rs.getString("descrizione"));
                 rist.setUbicazione(rs.getString("ubicazione"));
-                return  rist;
+                return rist;
             }
 
         } catch (Exception e) { e.printStackTrace();}
@@ -206,11 +205,10 @@ public class RistoranteDaoJDBC implements RistoranteDao {
             ResultSet rs = statement.executeQuery(query);
 
             while (rs.next()) {
-                setOfIDs.add(rs.getString("nome"));
+                setOfIDs.add(rs.getString("ristorante_nome"));
             }
 
         } catch (Exception e) { e.printStackTrace(); }
-
 
         return setOfIDs;
     }
